@@ -1,5 +1,4 @@
-const Header = (title, date, temp) => {
-  // TASK 1
+// TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
   // The html tags used, the hierarchy of elements and their attributes must match the provided markup exactly!
@@ -10,8 +9,32 @@ const Header = (title, date, temp) => {
   //    <h1>{ title }</h1>
   //    <span class="temp">{ temp }</span>
   //  </div>
+
+import { queryHelpers } from "@testing-library/dom";
+
   //
+const Header = (title, date, temp) => {
+  
+  const headerv = document.createElement('div');
+  const datev = document.createElement('span');
+  const titlev = document.createElement('h1');
+  const tempv = document.createElement('span');
+
+  headerv.classList.add('header');
+  datev.classList.add('date');
+  tempv.classList.add('temp');
+
+  datev.textContent = date;
+  titlev.textContent = title;
+  tempv.textContent = temp;
+
+  headerv.appendChild(datev);
+  headerv.appendChild(titlev);
+  headerv.appendChild(tempv);
+
+  return headerv;
 }
+// console.log(Header());
 
 const headerAppender = (selector) => {
   // TASK 2
@@ -26,6 +49,9 @@ const headerAppender = (selector) => {
   // We are taking care of passing in the correct selector on line 16,
   // so all that you need to do is pass it into the querySelector method
   // for the tests to work!
+
+  return document.querySelector(selector).appendChild(Header('class', '06-07-2023', 'temp'));
 }
+// console.log(headerAppender('container')); 
 
 export { Header, headerAppender }
