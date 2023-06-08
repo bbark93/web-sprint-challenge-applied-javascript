@@ -10,9 +10,19 @@ const Tabs = (topics) => {
   // <div class="topics">
   //   <div class="tab">javascript</div>
   //   <div class="tab">bootstrap</div>
-  //   <div class="tab">technology</div>
+  //   <div class="tab">technology</div> 
   // </div>
   //
+  const topicWrapper = document.createElement('div');
+  topicWrapper.classList.add('topics');
+  topics.forEach(element => {
+    const topic = document.createElement('div');
+    topicWrapper.appendChild(topic);
+    topic.textContent = element;
+    topic.classList.add('tab');
+  });
+  
+  return topicWrapper;
 }
 
 const tabsAppender = (selector) => {
