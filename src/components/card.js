@@ -41,10 +41,13 @@ const Card = (article) => {
   author.classList.add('author');
   imgContainer.classList.add('img-container');
 
+  cardWrapper.addEventListener('click', () => {
+    console.log(headline.textContent);
+  })
+
   return cardWrapper;
 }
-console.log(Card({headline: 'Nice!', authorPhoto: "", authorName: 'Brandon'}));
-//
+
 const cardAppender = (selector) => {
   // TASK 6
   // ---------------------
@@ -57,13 +60,11 @@ const cardAppender = (selector) => {
   function getCard() {
     axios.get(`http://localhost:5001/api/articles`)
       .then(resp => {
-        // console.log(resp.data.articles);
         const articles = resp.data.articles;
-        // console.log(articles.bootstrap[0]);
         for (const key in articles) {
-          key.forEach(element => {
-            console.log(element);
-          });
+          articles[key].forEach(element => {
+            document.querySelector(selector).appendChild(Card(element));
+          }); 
         }
       })
       .catch(err => console.error(err));

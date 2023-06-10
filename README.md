@@ -37,7 +37,7 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 - [x] Steps 1 and 2 are explained inside the `src/components/header.js` file.
 - [x] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
-- [ ] Steps 5 and 6 are explained inside the `src/components/card.js` file.
+- [x] Steps 5 and 6 are explained inside the `src/components/card.js` file.
 
 **Important Notes:**
 
@@ -50,15 +50,24 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 ## Submission format
 
-- [ ] Submit via Codegrade by committing and pushing any new changes to the *main* branch.
-- [ ] Check Codegrade for automated feedback.
+- [x] Submit via Codegrade by committing and pushing any new changes to the *main* branch.
+- [x] Check Codegrade for automated feedback.
 
 ## Stretch Interview Questions
 
 Demonstrate your understanding of this sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
 1. What is the DOM?
+    a Document object model is a programming interface that allows someone to create, change, or remove elements from the document.
+
 2. What is an event?
+    Events are "things" that happen in the system you are programming, which the system tells you about so your code can react tho them.
+
 3. What is an event listener?
+    An event listener ia a way that your code can wait for user interaction like a click, then run some code whenever that action happens.
+
 4. Why would we convert a NodeList into an Array?
+    To allow us to manipulate the data in the nodelist using methods as we would arrays.
+
 5. What is a component?
+    components are independent and reusable bits of code like functions.
