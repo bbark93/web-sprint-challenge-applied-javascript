@@ -59,12 +59,7 @@ const cardAppender = (selector) => {
       .then(resp => {
         console.log(resp.data.articles);
         const articles = resp.data.articles;
-        console.log(articles);
-        // articles.forEach(element => {
-        //   for (const key in element) {
-        //     console.log(element);
-        //   }
-        // });
+        console.log(articles.bootstrap[0]);
       })
       .catch(err => console.error(err));
   }
