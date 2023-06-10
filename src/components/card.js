@@ -57,9 +57,14 @@ const cardAppender = (selector) => {
   function getCard() {
     axios.get(`http://localhost:5001/api/articles`)
       .then(resp => {
-        console.log(resp.data.articles);
+        // console.log(resp.data.articles);
         const articles = resp.data.articles;
-        console.log(articles.bootstrap[0]);
+        // console.log(articles.bootstrap[0]);
+        for (const key in articles) {
+          key.forEach(element => {
+            console.log(element);
+          });
+        }
       })
       .catch(err => console.error(err));
   }
